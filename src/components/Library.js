@@ -1,12 +1,14 @@
 import React from "react";
-import librarySong from "./LibrarySong";
+import LibrarySong from "./LibrarySong";
 
-const Library = () => {
+const Library = ({ songs }) => {
   return (
     <div className="library">
       <h2>Library</h2>
       <div className="librarySongs">
-        <librarySong />
+        {songs.map((song) => (
+          <LibrarySong song={song} />
+        ))}
       </div>
     </div>
   );
