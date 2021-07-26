@@ -16,25 +16,8 @@ const Player = ({
   songInfo,
   songs,
   setCurrentSong,
-  setSongs,
+  activeLibraryHandler,
 }) => {
-  //UseEffect
-  useEffect(() => {
-    const newSongs = songs.map((song) => {
-      if (song.id === currentSong.id) {
-        return {
-          ...song,
-          active: true,
-        };
-      } else {
-        return {
-          ...song,
-          active: false,
-        };
-      }
-    });
-    setSongs(newSongs);
-  }, [currentSong]);
   //Event handlers
   const playSongHandler = () => {
     if (isPlaying) {
@@ -61,8 +44,12 @@ const Player = ({
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "skip-forward") {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
     } else {
       await setCurrentSong(
+        songs[(currentIndex - 1 + songs.length) % songs.length]
+      );
+      activeLibraryHandler(
         songs[(currentIndex - 1 + songs.length) % songs.length]
       );
     }
