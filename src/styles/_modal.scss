@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700,300);
+
 .modal-window {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.25);
@@ -31,6 +33,19 @@
     font-size: 150%;
     margin: 0 0 15px;
   }
+  button {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border: 2px solid rgb(65, 65, 65);
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    &:hover {
+      background: rgb(65, 65, 65);
+      color: white;
+    }
+  }
 }
 
 .modal-close {
@@ -45,6 +60,21 @@
   text-decoration: none;
   &:hover {
     color: black;
+  }
+}
+
+.requestForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-style {
+  background: transparent;
+  border: none;
+  border-bottom: 1px white solid;
+  outline: none;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
   }
 }
 

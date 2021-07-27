@@ -10,11 +10,30 @@ const Modal = () => {
           </a>
           <h1>Enter song details:</h1>
           <div>
-            A CSS-only modal based on the :target pseudo-class. Hope you find it
-            helpful.
-          </div>
-          <div>
-            <small>Check out</small>
+            <form className="requestForm">
+              <input
+                type="text"
+                name="artist"
+                className="form-style"
+                placeholder="Artist"
+                id="artist"
+              />
+              <input
+                type="text"
+                name="songName"
+                className="form-style"
+                placeholder="Song Name"
+                id="songName"
+              />
+              <input
+                type="text"
+                name="songLink"
+                className="form-style"
+                placeholder="Song Youtube Link"
+                id="songLame"
+              />
+              <button type="submit">Request</button>
+            </form>
           </div>
         </div>
       </div>
