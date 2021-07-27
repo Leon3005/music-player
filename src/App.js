@@ -6,6 +6,7 @@ import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
 import Navbar from "./components/Navbar";
+import Modal from "./components/Modal";
 //Importing data
 import data from "./data";
 
@@ -96,6 +97,7 @@ function App() {
         src={currentSong.audio}
         onEnded={songEndHandler}
       ></audio>
+      <Modal />
     </div>
   );
 }

@@ -15,7 +15,8 @@
     padding: 2rem;
   }
 
-  button {
+  a {
+    text-decoration: none;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -24,7 +25,7 @@
     margin-top: 3rem;
     transition: all 0.3s ease;
     position: absolute;
-    left: 35%;
+    left: 30%;
     &:hover {
       background: rgb(65, 65, 65);
       color: white;
@@ -83,5 +84,8 @@
 @media screen and (max-width: 768px) {
   .library {
     width: 100%;
+    a {
+      left: 40%;
+    }
   }
 }

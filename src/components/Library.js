@@ -26,7 +26,7 @@ const Library = ({
           />
         ))}
       </div>
-      <button>Request a song!</button>
+      <a href="#open-modal">Request a song!</a>
     </div>
   );
 };
