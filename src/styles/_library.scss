@@ -5,14 +5,30 @@
   width: 20rem;
   height: 100%;
   background-color: rgb(24, 24, 24);
-
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   overflow: scroll;
   transform: translate(-100%);
   transition: all 0.5s ease;
   opacity: 0;
+
   h2 {
     padding: 2rem;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border: 2px solid rgb(65, 65, 65);
+    padding: 0.5rem;
+    margin-top: 3rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 35%;
+    &:hover {
+      background: rgb(65, 65, 65);
+      color: white;
+    }
   }
 }
 
