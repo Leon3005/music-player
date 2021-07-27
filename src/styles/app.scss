@@ -2,12 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+}
+
+.App {
+  background-color: rgb(24, 24, 24);
+  height: 100vh;
 }
 
 h1,
 h2,
 h3 {
-  color: rgb(56, 56, 56);
+  color: rgb(233, 233, 233);
 }
 body {
   font-family: "Lato", sans-serif;
