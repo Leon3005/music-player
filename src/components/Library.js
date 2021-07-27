@@ -1,5 +1,6 @@
 import React from "react";
 import LibrarySong from "./LibrarySong";
+import $ from "jquery";
 
 const Library = ({
   songs,
@@ -9,6 +10,10 @@ const Library = ({
   setSongs,
   libraryStatus,
 }) => {
+  const onClick = () => {
+    $(".modal-window").show();
+  };
+
   return (
     <div className={`library ${libraryStatus ? "active-library" : ""}`}>
       <h2>Library</h2>
@@ -26,7 +31,7 @@ const Library = ({
           />
         ))}
       </div>
-      <a href="#open-modal">Request a song!</a>
+      <button onClick={onClick}>Request a song!</button>
     </div>
   );
 };

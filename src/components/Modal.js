@@ -20,12 +20,18 @@ const Modal = () => {
     $(".modal-window").hide();
   };
 
+  const onClick = (event) => {
+    event.preventDefault();
+
+    $(".modal-window").hide();
+  };
+
   return (
     <div id="open-modal" class="modal-window">
       <div>
-        <a href="#" title="Close" class="modal-close">
+        <button class="modal-close" onClick={onClick}>
           Close
-        </a>
+        </button>
         <h1>Enter song details:</h1>
         <div>
           <form className="requestForm" onSubmit={onSubmit}>
