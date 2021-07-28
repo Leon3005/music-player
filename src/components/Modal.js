@@ -44,10 +44,7 @@ const Modal = () => {
       songLink,
     };
 
-    const { data, error } = await sendData(
-      process.env.API_URL || "http://localhost:4000/api/requests",
-      body
-    );
+    const { data, error } = await sendData(process.env.API_URL, body);
 
     if (error) {
       $(".sendError").remove();
