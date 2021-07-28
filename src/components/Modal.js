@@ -18,6 +18,26 @@ const Modal = () => {
       return;
     }
 
+    const matchYoutubeUrl = (url) => {
+      const p =
+        /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+      if (url.match(p)) {
+        return true;
+      }
+      return false;
+    };
+
+    const validUrl = matchYoutubeUrl(songLink);
+
+    if (!validUrl) {
+      $(".fieldError").remove();
+      $(".linkError").remove();
+      $(event.target).append(`
+      <p class="linkError"> Please verify your YouTube link. </p>
+      `);
+      return;
+    }
+
     const body = {
       artist,
       songName,
