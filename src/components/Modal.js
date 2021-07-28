@@ -1,23 +1,45 @@
 import React from "react";
 import $ from "jquery";
+import sendData from "../utils/sendData";
 
 const Modal = () => {
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
-    const artist = $("#artist").value;
-    const songName = $("#songName").value;
-    const songLink = $("#songLink").value;
+    const artist = $("#artist").val();
+    const songName = $("#songName").val();
+    const songLink = $("#songLink").val();
 
-    if (artist === "" || songName === "" || songLink === "") {
-      $(".error-text").remove();
+    if (!artist || !songName || !songLink) {
+      $(".fieldError").remove();
       $(event.target).append(`
-      <p class="error-text"> Please fill all fields. </p>
+      <p class="fieldError"> Please fill all fields. </p>
+      `);
+      return;
+    }
+
+    const body = {
+      artist,
+      songName,
+      songLink,
+    };
+
+    const { data, error } = await sendData(
+      "http://localhost:4000/api/requests",
+      body
+    );
+
+    if (error) {
+      $(".sendError").remove();
+      $(event.target).append(`
+      <p class="sendError"> Error making request. Please try again later. </p>
       `);
       return;
     }
 
     $(".modal-window").hide();
+
+    $(".requestForm")[0].reset();
   };
 
   const onClick = (event) => {
