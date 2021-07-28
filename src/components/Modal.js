@@ -45,7 +45,7 @@ const Modal = () => {
     };
 
     const { data, error } = await sendData(
-      "http://localhost:4000/api/requests",
+      process.env.API_URL || "http://localhost:4000/api/requests",
       body
     );
 
