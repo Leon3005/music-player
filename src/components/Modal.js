@@ -13,7 +13,7 @@ const Modal = () => {
     if (!artist || !songName || !songLink) {
       $(".fieldError").remove();
       $(event.target).append(`
-      <p class="fieldError"> Please fill all fields. </p>
+      <p className="fieldError"> Please fill all fields. </p>
       `);
       return;
     }
@@ -33,7 +33,7 @@ const Modal = () => {
       $(".fieldError").remove();
       $(".linkError").remove();
       $(event.target).append(`
-      <p class="linkError"> Please verify your YouTube link. </p>
+      <p className="linkError"> Please verify your YouTube link. </p>
       `);
       return;
     }
@@ -52,7 +52,15 @@ const Modal = () => {
     if (error) {
       $(".sendError").remove();
       $(event.target).append(`
-      <p class="sendError"> Error making request. Please try again later. </p>
+      <p className="sendError"> Error making request. Please try again later. </p>
+      `);
+      return;
+    }
+
+    if (!error && !data) {
+      $(".sendLoading").remove();
+      $(event.target).append(`
+      <p className="sendLoading"> Request is being sent. Please wait... </p>
       `);
       return;
     }
@@ -69,9 +77,9 @@ const Modal = () => {
   };
 
   return (
-    <div id="open-modal" class="modal-window">
+    <div id="open-modal" className="modal-window">
       <div>
-        <button class="modal-close" onClick={onClick}>
+        <button className="modal-close" onClick={onClick}>
           Close
         </button>
         <h1>Enter song details:</h1>
