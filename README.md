@@ -5,6 +5,7 @@
 LW Radio is a full-stack React application that allows users to listen to songs with a control panel to play, pause, skip forwards, and skip backwards. It also allows users to request songs by using the 'Request a song' button in the library. This sends a POST request to another deployed Heroku server.
 
 Deployed application link: [LW Radio](https://lw-music-player.herokuapp.com/)
+
 Server GitHub link: [LW Radio Server](https://github.com/Leon3005/music-player-server)
 
 ## Table of Contents
