@@ -44,7 +44,10 @@ const Modal = () => {
       songLink,
     };
 
-    const { data, error } = await sendData(process.env.API_URL, body);
+    const { data, error } = await sendData(
+      "https://lw-music-player-server.herokuapp.com/api/requests",
+      body
+    );
 
     if (error) {
       $(".sendError").remove();
